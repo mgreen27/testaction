@@ -12,9 +12,7 @@ jobs:
         for x in $( ls *.py ); do
           python3 $i
         done
-        cd ..
-    - name: switching from HTTPS to SSH
-      run: git remote set-url origin ${{ secrets.ssh }}        
+        cd ..      
     - name: check for changes
       run: git status
     - name: stage changed files
