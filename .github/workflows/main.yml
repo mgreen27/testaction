@@ -7,13 +7,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Update vql
       run: |
-        pwd
         cd ./scripts
         for x in $( ls *.py ); do
           python $i
         done
         cd ..   
-        echo $(ls vql/*.yaml)
+        ls -l vql/*.yaml
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated VQL update
