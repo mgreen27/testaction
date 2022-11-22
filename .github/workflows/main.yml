@@ -6,6 +6,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+- name: Fetch the number's square
+  run: python src/get_num_square.py
     - name: Install python requirements
       run: |
           pip install --upgrade pip
@@ -15,7 +17,7 @@ jobs:
       run: |
           cd ./scripts
           for x in $( ls *.py ); do
-            /usr/bin/bash python $i
+            python $i
           done 
           cd ..
           echo $(shasum vql/*.yaml)
