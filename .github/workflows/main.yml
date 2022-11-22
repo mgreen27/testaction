@@ -12,7 +12,7 @@ jobs:
           python3 $i
         done 
         echo "SQL in folder:"
-        shasum *.yaml
+        echo $(shasum *.yaml)
         python -V
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
