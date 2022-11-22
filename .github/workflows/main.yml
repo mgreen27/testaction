@@ -18,6 +18,7 @@ jobs:
           
     - name: Update vql
       run: |
+          mkdir -p ./vql
           cd ./scripts
           python bulk_mft.py
           python bulk_evtx.py
