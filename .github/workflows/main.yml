@@ -11,14 +11,6 @@ jobs:
           pip install --upgrade pip
           pip install -r ./requirements.txt
           
-    - name: Self test
-      id: selftest
-      uses: ryan-rozario/pipreqs-action-cpy@master
-      # Put an example of mandatory inputs here
-      with:
-        PROJECT_PATH: .
-        REQUIREMENT_PATH: ./requirements.txt
-    
     - name: Update vql
       run: |
           cd ./scripts
