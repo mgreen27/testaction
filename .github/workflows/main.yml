@@ -8,7 +8,7 @@ jobs:
 
     - name: Install python requirements
       run: |
-          pip install -f ./requirements.txt
+          pip install ./requirements.txt
           
     - name: Self test
       id: selftest
