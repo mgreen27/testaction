@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 """
 This script converts a evtx IOC list to a velociraptor artifact.
 
