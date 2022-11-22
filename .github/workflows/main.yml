@@ -5,14 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Update vql
-      run: |
-          cd ./scripts
-          for x in $( ls *.py ); do
-            /usr/bin/python $i
-          done 
-          cd ..
-          echo $(shasum vql/*.yaml)
 
     - name: Self test
       id: selftest
@@ -21,6 +13,15 @@ jobs:
       with:
         PROJECT_PATH: project_folder   #default is the root of the repository
         REQUIREMENT_PATH: project_folder/requirements.txt  #default is requirement.txt in the root of your repository 
+    
+    - name: Update vql
+      run: |
+          cd ./scripts
+          for x in $( ls *.py ); do
+            /usr/bin/python $i
+          done 
+          cd ..
+          echo $(shasum vql/*.yaml)
           
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
