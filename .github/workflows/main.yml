@@ -9,7 +9,7 @@ jobs:
     - name: Install python requirements
       run: |
           pip install --upgrade pip
-          pip install -r ./requirements.txt
+          pip install PyYAML==6.0
           
     - name: Update vql
       run: |
