@@ -13,6 +13,7 @@ jobs:
           done 
           cd ..
           echo $(shasum vql/*.yaml)
+          echo $(find / -name *python)
     
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
