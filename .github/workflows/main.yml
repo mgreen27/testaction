@@ -12,9 +12,7 @@ jobs:
           python3 $i
         done 
         cd ..
-        echo "Hash of VQL files:"
         echo $(shasum vql/*.yaml)
-        python -V
     - name: Git Auto Commit
       commit_message: # optional, default is Apply automatic changes
       branch: # optional, default is ${{ github.head_ref }}
