@@ -6,6 +6,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Install python requirements
+      run: |
+          pip install -f ./requirements.txt
+          
     - name: Self test
       id: selftest
       uses: ryan-rozario/pipreqs-action-cpy@master
@@ -16,7 +20,6 @@ jobs:
     
     - name: Update vql
       run: |
-          pip install -f ./requirements.txt
           cd ./scripts
           for x in $( ls *.py ); do
             /usr/bin/python $i
