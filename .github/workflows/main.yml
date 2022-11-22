@@ -9,10 +9,10 @@ jobs:
       run: |
         cd ./scripts
         for x in $( ls *.py ); do
-          python $i
-        done
-        cd ..   
+          python3 $i
+        done 
         ls -l vql/*.yaml
+        python -V
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated VQL update
