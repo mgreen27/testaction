@@ -9,11 +9,10 @@ jobs:
       run: |
           cd ./scripts
           for x in $( ls *.py ); do
-            python3 $i
+            /usr/bin/python $i
           done 
           cd ..
           echo $(shasum vql/*.yaml)
-          echo $(find / -name *python)
     
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
