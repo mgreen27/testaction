@@ -15,7 +15,7 @@ jobs:
       run: |
           cd ./scripts
           for x in $( ls *.py ); do
-            /usr/bin/bash python3 $i
+            /usr/bin/bash python $i
           done 
           cd ..
           echo $(shasum vql/*.yaml)
