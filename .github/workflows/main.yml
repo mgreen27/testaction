@@ -9,7 +9,7 @@ jobs:
       run: |
         pwd
         cd ./scripts
-        for x in ${{ ls *.py }}; do
+        for x in $( ls *.py ); do
           python3 $i
         done
     - name: switching from HTTPS to SSH
