@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Update vql
       run: |
-        cd scripts
+        cd ./scripts
         foreach i in $( ls *.py ) ; python3 $i ; end
     - name: switching from HTTPS to SSH
       run: git remote set-url origin ${{ secrets.ssh }}        
