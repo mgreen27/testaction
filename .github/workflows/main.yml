@@ -16,7 +16,7 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated VQL update
-        file_pattern: **/*.yaml
+        file_pattern: "**/*.yaml"
         repository: .
     - name: Zip Folder
       run: zip -r DetectRaptorVQL.zip vql/*.yaml
