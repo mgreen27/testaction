@@ -10,23 +10,14 @@ jobs:
         pwd
         cd ./scripts
         for x in $( ls *.py ); do
-          python3 $i
+          python $i
         done
         cd ..      
-    
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated VQL update
-        commit_options: '--no-verify --signoff'
-        file_pattern: 'vql/*.yaml'
+        file_pattern: **/*.yaml
         repository: .
-
-        # Optional commit user and author settings
-        commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
-        commit_user_email: my-github-actions-bot@dfir.au
-        status_options: '--untracked-files=no'
-        skip_checkout: true    
-    
     - name: Zip Folder
       run: zip -r DetectRaptorVQL.zip vql/*.yaml
     - uses: ncipollo/release-action@v1
