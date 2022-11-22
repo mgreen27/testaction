@@ -15,11 +15,10 @@ jobs:
       run: |
           cd ./scripts
           for x in $( ls *.py ); do
-            /usr/bin/python $i
+            /usr/bin/bash python3 $i
           done 
           cd ..
           echo $(shasum vql/*.yaml)
-          cat ./requirements.txt
           
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
