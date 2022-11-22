@@ -12,7 +12,7 @@ jobs:
           
     - name: Update vql
       run: |
-          pip install PyYAML==6.0
+          pip install PyYAML==6.0 -q
           cd ./scripts
           python bulk_mft.py
           python bulk_evtx.py
