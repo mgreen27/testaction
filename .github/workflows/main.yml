@@ -7,12 +7,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Update vql
       run: |
-        cd ./scripts
-        for x in $( ls *.py ); do
-          python3 $i
-        done 
-        cd ..
-        echo $(shasum vql/*.yaml)
+          cd ./scripts
+          for x in $( ls *.py ); do
+            python3 $i
+          done 
+          cd ..
+          echo $(shasum vql/*.yaml)
     - name: Git Auto Commit
       commit_message: # optional, default is Apply automatic changes
       branch: # optional, default is ${{ github.head_ref }}
