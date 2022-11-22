@@ -4,7 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+    
+    
     - name: Install Python
       uses: actions/setup-python@v4
       with:
