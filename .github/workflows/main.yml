@@ -10,9 +10,7 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install python requirements
-      run: |
-          pip install --upgrade pip
-          pip install PyYAML==6.0
+      run: pip install PyYAML==6.0
           
     - name: Update vql
       run: |
