@@ -11,14 +11,15 @@ jobs:
         for x in $( ls *.py ); do
           python3 $i
         done 
+        cd ..
         echo "SQL in folder:"
-        echo $(shasum *.yaml)
+        echo $(shasum vql/*.yaml)
         python -V
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Automated VQL update
         file_pattern: "*.yaml"
-        repository: .
+        repository: vql/
     - name: Zip Folder
       run: zip -r DetectRaptorVQL.zip vql/*.yaml
     - uses: ncipollo/release-action@v1
