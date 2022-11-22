@@ -13,16 +13,20 @@ jobs:
           python3 $i
         done
         cd ..      
-    - name: check for changes
-      run: git status
-    - name: stage changed files
-      run: git add .
-    - name: commit changed files
-      run: git commit -m "Auto updating VQL"
-    - name: fetch from master
-      run: git fetch origin master
-    - name: push code to master
-      run: git push origin HEAD:master        
+    
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automated VQL update
+        commit_options: '--no-verify --signoff'
+        file_pattern: 'vql/*.yaml'
+        repository: .
+
+        # Optional commit user and author settings
+        commit_user_name: My GitHub Actions Bot # defaults to "github-actions[bot]"
+        commit_user_email: my-github-actions-bot@dfir.au
+        status_options: '--untracked-files=no'
+        skip_checkout: true    
+    
     - name: Zip Folder
       run: zip -r DetectRaptorVQL.zip vql/*.yaml
     - uses: ncipollo/release-action@v1
