@@ -9,7 +9,9 @@ jobs:
       run: |
         pwd
         cd ./scripts
-        foreach i in $( ls *.py ) ; python3 $i ; end
+        for x in ${{ ls *.py }}; do
+          python3 $i
+        done
     - name: switching from HTTPS to SSH
       run: git remote set-url origin ${{ secrets.ssh }}        
     - name: check for changes
