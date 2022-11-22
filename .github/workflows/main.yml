@@ -15,9 +15,8 @@ jobs:
     - name: Update vql
       run: |
           cd ./scripts
-          for x in $( ls *.py ); do
-            python $i
-          done 
+          python bulk_mft.py
+          python bulk_evtx.py
           cd ..
           echo $(shasum vql/*.yaml)
           
